@@ -19,13 +19,11 @@ def is_prime(n):
 
 
 if __name__ == '__main__':
-    i = 0
-    j = 0
-    sum_prime = 0
+    primes = []
     max_count = 1000
-    while i < max_count:
+    j = 0
+    while len(primes) < max_count:
         j += 1
         if is_prime(j):
-            i += 1
-            sum_prime += j
-    print(sum_prime)
+            primes.append(j)
+    print(sum(primes))
