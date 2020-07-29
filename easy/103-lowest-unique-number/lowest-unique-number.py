@@ -19,6 +19,6 @@ if __name__ == '__main__':
                             d.append(i)
                     if d:
                         d.sort()
-                        print(line_list.index(d[0]))
+                        print(line_list.index(d[0]) + 1)
                     else:
                         print(0)
