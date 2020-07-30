@@ -12,10 +12,10 @@ def get_roman_notation(x):
 
 
 def get_roman(x):
-    romans = [['I', 'V', 'X'], ['X', 'L', 'C'], ['C', 'D', 'M'], ['M']]
+    roman_registers = [['I', 'V', 'X'], ['X', 'L', 'C'], ['C', 'D', 'M'], ['M']]
     x = str(x)
-    register_list = list(map(int, x.strip()))
-    pair_registers = list(zip(register_list[::-1], romans))
+    x_register_list = list(map(int, x.strip()))
+    pair_registers = list(zip(x_register_list[::-1], roman_registers))
     return ''.join(list(map(get_roman_notation, pair_registers))[::-1])
 
 
