@@ -2,6 +2,12 @@ import sys
 
 
 def get_roman_notation(x):
+    """
+    returns a Roman notation string for a digit using
+    the passed list of case-matching Roman numerals
+    :param x: (9, ('I', 'V', 'X'))
+    :return: 'IX'
+    """
     if x[0] < 4:
         return x[1][0] * x[0]
     elif x[0] == 4:
@@ -12,11 +18,16 @@ def get_roman_notation(x):
 
 
 def get_roman(x):
-    roman_registers = [['I', 'V', 'X'], ['X', 'L', 'C'], ['C', 'D', 'M'], ['M']]
+    """
+    convert decimal number to romanian for 0 - 3999
+    :param x: number (159 or '159')
+    :return: Roman numeral string('CLIX')
+    """
+    roman_registers = (('I', 'V', 'X'), ('X', 'L', 'C'), ('C', 'D', 'M'), ('M',))
     x = str(x)
-    x_register_list = list(map(int, x.strip()))
-    pair_registers = list(zip(x_register_list[::-1], roman_registers))
-    return ''.join(list(map(get_roman_notation, pair_registers))[::-1])
+    x_register_list = tuple(map(int, x.strip()))
+    pair_registers = tuple(zip(x_register_list[::-1], roman_registers))
+    return ''.join(tuple(map(get_roman_notation, pair_registers))[::-1])
 
 
 if __name__ == '__main__':
