@@ -13,5 +13,3 @@ if __name__ == '__main__':
                     if line[0:i] == line[i:2*i] and line.count(line[0:i]) * line[0:i] == line or i == len(line):
                         print(i)
                         break
-
-
