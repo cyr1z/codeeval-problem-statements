@@ -9,5 +9,5 @@ if __name__ == '__main__':
         for line in read_file:
             line = line.strip()
             line_list = list(line.split())
-            line_list.sort(key=lambda s: len(s), reverse=True)
+            line_list.sort(key=len, reverse=True)
             print(line_list[0])
